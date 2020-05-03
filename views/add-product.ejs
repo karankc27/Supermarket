@@ -1,0 +1,84 @@
+<%-include("header")%>
+<!--banner-->
+<div class="banner-top">
+<div class="container">
+<h3 >Add Product</h3>
+<% if(errorMessage) { %>
+		<div class="alert alert-danger" role="alert"><B><%=errorMessage%></B></div>
+		<% } %>
+<h4><a href="/">Home</a><label>/</label>Add Product</h4>
+<div class="clearfix"> </div>
+</div>
+</div>
+
+<!--login-->
+
+<div class="login">
+<div class="main-agileits">
+   <div class="form-w3agile form1">
+     <h3>Add Product</h3>
+     <form action="/add-product" method="POST">
+
+			 				<input type="hidden" name="merchant_name" value="<%=name%>">
+        			<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+          <input class="form-control" placeholder="Product name" type="text" title="Enter Product Name with quantity"  name="pname"   required="true">
+         <div class="clearfix"></div>
+         <br>
+
+         <input class="form-control" type="text"  placeholder="Price" title="Enter the price of the Product" name="price" required="true">
+         <div class="clearfix"></div>
+         <br>
+
+       <input class="form-control" type="text"  placeholder="ImageUrl of the product" title="Enter url" name="imageurl" required="true">
+       <div class="clearfix"></div>
+        <br>
+
+         <input class="form-control" placeholder="Pincode of area where it can be delivered" type="text" title="Pincode" name="pin" required="true">
+        <div class="clearfix"></div>
+        <br>
+
+        <input class="form-control" placeholder="Quantity" type="Number" title="Quantity Available" name="quantity" required="true">
+       <div class="clearfix"></div>
+       <br>
+
+     <input class="form-control" placeholder="Description" type="text" title="Description" name="description" >
+      <div class="clearfix"></div>
+     <br>
+
+       <select class="" name="cat">
+         <option value="cat">Select Category</option>
+         <option value="kitchen">Kitchen Product</option>
+         <option value="care">Personal Care</option>
+         <option value="hold">Household Product</option>
+				 <option value="fruits">Fruits and Vegetables</option>
+				 <option value="sweets">Sweets</option>
+		     <option value="organic">Organic Product</option>
+       </select>
+       <select class="" name="subcat">
+         <option value="subcat">Select Sub Category</option>
+         <option value="liquids">Water & Beverages</option>
+         <option value="fruits">Fruits & Vegetables</option>
+         <option value="breakfast">Breakfast &amp; Cereal</option>
+         <option value="snacks">Snacks</option>
+         <option value="spices">Spices</option>
+         <option value="sweets">Sweets</option>
+         <option value="pickles">Pickle & Condiment</option>
+         <option value="dryfruits">Dry Fruit</option>
+         <option value="tea">Tea &amp; Coffee</option>
+         <option value="baby">Baby Care</option>
+         <option value="hygiene">Personal Hygiene</option>
+         <option value="cleaning">Cleaning Accessories</option>
+         <option value="pet">Pet Care</option>
+       </select>
+       <br><br>
+       <input type="submit" value="Add Product" />
+
+     </form>
+   </div>
+
+ </div>
+</div>
+<%
+%>
+<!--footer-->
+<%-include("footer")%>

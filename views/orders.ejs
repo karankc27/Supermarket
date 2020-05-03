@@ -1,0 +1,25 @@
+<%-include("header")%>
+<br>
+<h1 align="center">  Suncoins <img src="https://purepng.com/public/uploads/medium/purepng.com-gold-coinsflatcoinsroundmetalgoldclipart-1421526479582xymab.png" style="width:60px;height:50px;" alt=""> : <%=suncoin%></h1>
+
+<br><br> <br>
+<div class="spec ">
+  <h3>Your Orders</h3>
+  <div class="ser-t">
+    <b></b>
+    <span><i></i></span>
+    <b class="line"></b>
+  </div>
+</div>
+<% if (orders.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <ul class="orders">
+                    <% orders.forEach(order => { %>
+                        <li class="orders__item">
+                            <h2>Order - # <%= order._id %> - <a href="#">Invoice</a></h2> <br>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } %>
+<%-include("footer")%>

@@ -1,0 +1,52 @@
+<%-include("header")%>
+<!--banner-->
+<div class="banner-top">
+<div class="container">
+<h3 >My Account</h3>
+<% if(errorMessage) { %>
+		<div class="alert alert-success" role="alert"><B><%=errorMessage%></B></div>
+		<% } %>
+<h4><a href="/">Home</a><label>/</label>My Account</h4>
+<div class="clearfix"> </div>
+</div>
+</div>
+
+<!--login-->
+
+<div class="login">
+<div class="main-agileits">
+   <div class="form-w3agile form1">
+     <h3>Update Account</h3>
+     <form action="/account" method="POST">
+
+        			<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+          <i class="fa fa-user" ></i><input class="form-control" value="<%=name%>" placeholder="Username" type="text" title="Enter your Full Name"  name="name"   required="true">
+         <div class="clearfix"></div>
+
+           <i class="fa fa-envelope" aria-hidden="true"></i>
+         <input class="form-control" type="text"  placeholder="Email" value="<%=email%>" title="Please enter a valid email!" name="email" required="true">
+         <div class="clearfix"></div>
+
+         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><input class="form-control" value="<%=phone%>" placeholder="Phone Number" type="text" title="Enter your Full Name" name="phone"   required="true">
+        <div class="clearfix"></div>
+
+        <i class="fa fa-address-book" aria-hidden="true"></i>
+        <textarea name="address" rows="8" cols="80" class="form-control" type="text" placeholder="Address" value="<%=phone%>" title="Please enter a valid address" name="address" required="true"></textarea>
+        <div class="clearfix"></div>
+        <br>
+        <input class="form-control" placeholder="Pincode" type="text" title="Enter valid Pincode"  value="<%=pin%>" name="pin" required="true">
+       <div class="clearfix"></div>
+
+<br>
+
+       <input type="submit" value="Update" />
+
+     </form>
+   </div>
+
+ </div>
+</div>
+<%
+%>
+<!--footer-->
+<%-include("footer")%>

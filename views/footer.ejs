@@ -1,0 +1,111 @@
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 footer-grid">
+			<h3>About Us</h3>
+			<p>Our purpose is to provide Online Grocery Shopping solution to consumers and vendors. </p>
+		</div>
+		<div class="col-md-3 footer-grid ">
+			<h3>Customer Services</h3>
+			<ul>
+				<li><a href="/shipping">Shipping</a></li>
+				<li><a href="/terms">Terms & Conditions</a></li>
+				<li><a href="/shipping">Faqs</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</div>
+		<div class="col-md-3 footer-grid">
+			<h3>Policies</h3>
+			<ul>
+				<li><a href="/privacy">Privacy Policy</a></li>
+				<li><a href="/terms">Terms and Conditions</a></li>
+				<li><a href="/cancellation">Cancellation/Refund Policy</a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+			<div class="footer-bottom">
+				<h2 ><a href="/">Sun Mart<span>The Best Supermarket</span></a></h2>
+				<div class=" address">
+					<div class="col-md-4 fo-grid1">
+							<p><i class="fa fa-home" aria-hidden="true"></i>Tenali, Andhra Pradesh, India</p>
+					</div>
+					<div class="col-md-4 fo-grid1">
+							<p><i class="fa fa-phone" aria-hidden="true"></i>9398282096</p>
+					</div>
+					<div class="col-md-4 fo-grid1">
+						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>support@sunmarket.in</a></p>
+					</div>
+					<div class="clearfix"></div>
+
+					</div>
+			</div>
+		<div class="copy-right">
+			<p> &copy; 2020 SunMart. All Rights Reserved | Design by  W3layouts</p>
+		</div>
+	</div>
+</div>
+<!-- //footer-->
+
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear'
+			};
+		*/
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<script type='text/javascript' src="js/jquery.mycart.js"></script>
+  <script type="text/javascript">
+  $(function () {
+
+    var goToCartIcon = function($addTocartBtn){
+      var $cartIcon = $(".my-cart-icon");
+      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+      $addTocartBtn.prepend($image);
+      var position = $cartIcon.position();
+      $image.animate({
+        top: position.top,
+        left: position.left
+      }, 500 , "linear", function() {
+        $image.remove();
+      });
+    }
+
+    $('.my-cart-btn').myCart({
+      classCartIcon: 'my-cart-icon',
+      classCartBadge: 'my-cart-badge',
+      affixCartIcon: true,
+      checkoutCart: function(products) {
+        $.each(products, function(){
+          console.log(this);
+        });
+      },
+      clickOnAddToCart: function($addTocart){
+        goToCartIcon($addTocart);
+      },
+      getDiscountPrice: function(products) {
+        var total = 0;
+        $.each(products, function(){
+          total += this.quantity * this.price;
+        });
+        return total * 1;
+      }
+    });
+
+  });
+  </script>
+
+<!-- product -->
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<%-include("header")%>
+<!--banner-->
+<div class="banner-top">
+<div class="container">
+<h3 >Register</h3>
+<% if(errorMessage) { %>
+		<div class="alert alert-danger" role="alert"><B><%=errorMessage%></B></div>
+		<% } %>
+<h4><a href="/">Home</a><label>/</label>Register</h4>
+<div class="clearfix"> </div>
+</div>
+</div>
+
+<!--login-->
+
+<div class="login">
+<div class="main-agileits">
+   <div class="form-w3agile form1">
+     <h3>Register</h3>
+     <form action="/register" method="POST">
+
+        			<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+          <i class="fa fa-user" ></i><input class="form-control" placeholder="Username" type="text" title="Enter your Full Name"  name="name"   required="true">
+         <div class="clearfix"></div>
+
+           <i class="fa fa-envelope" aria-hidden="true"></i>
+         <input class="form-control" type="text"  placeholder="Email" title="Please enter a valid email!" name="email" required="true">
+         <div class="clearfix"></div>
+
+         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><input class="form-control" placeholder="Phone Number" type="text" title="Enter your Full Name" name="phone"   required="true">
+        <div class="clearfix"></div>
+
+        <i class="fa fa-address-book" aria-hidden="true"></i>
+        <textarea name="address" rows="8" cols="80" class="form-control" type="text" placeholder="Address" title="Please enter a valid address" name="address" required="true"></textarea>
+        <div class="clearfix"></div>
+        <br>
+        <input class="form-control" placeholder="Pincode" type="text" title="Enter valid Pincode"  name="pin" required="true">
+       <div class="clearfix"></div>
+
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<label><i class="fa fa-lock" aria-hidden="true"></i><input class="form-control" name="password" id="password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" />
+</label>
+<br>
+<label><i class="fa fa-lock" aria-hidden="true"></i><input class="form-control" type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password"/>
+  <span id='message'></span>
+</label>
+<br><br>
+
+       <input type="submit" value="Register" />
+
+     </form>
+   </div>
+
+ </div>
+</div>
+<%
+%>
+<!--footer-->
+<%-include("footer")%>

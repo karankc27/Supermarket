@@ -1,0 +1,79 @@
+<%-include("header")%>
+<img src=" <%=img%> " style="width:100%;height:500px;"alt="">
+
+
+<div class="banner-top">
+<div class="container">
+<h3 >Subscribe</h3>
+<% if(errorMessage) { %>
+		<div class="alert alert-danger" role="alert"><B><%=errorMessage%></B></div>
+		<% } %>
+<h4><a href="/">Home</a><label>/</label>Organic<label>/</label>Subscribe</h4>
+<div class="clearfix"> </div>
+</div>
+</div>
+
+<!--login-->
+
+<div class="login">
+<div class="main-agileits">
+   <div class="form-w3agile form1">
+     <h3>Subscribe</h3>
+     <form action="/subscribe" method="POST">
+
+        	<input type="hidden" name="_csrf" value="<%= csrfToken%>">
+          <i class="fa fa-user" ></i><input class="form-control" placeholder="Username" type="text" title="Enter your Full Name"  name="name"  value="<%=name%>" required="true">
+         <div class="clearfix"></div>
+
+           <i class="fa fa-envelope" aria-hidden="true"></i>
+         <input class="form-control" type="text"  placeholder="Email" title="Please enter a valid email!" name="email" value="<%=email%>" required="true">
+         <div class="clearfix"></div>
+
+         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><input class="form-control" placeholder="Phone Number" type="text" title="Enter your Full Name" name="phone"  value="<%=phone%>" required="true">
+        <div class="clearfix"></div>
+
+        <i class="fa fa-address-book" aria-hidden="true"></i>
+        <input name="address" rows="8" cols="80" class="form-control" type="text" placeholder="Address" title="Please enter a valid address" name="address" value="<%=address%>" required="true"></input>
+        <div class="clearfix"></div>
+        <br>
+        <input class="form-control" placeholder="Pincode" type="text" title="Enter valid Pincode"  name="pin" value="<%=pin%>" required="true">
+       <div class="clearfix"></div>
+       <br>
+
+        <input class="form-control" name="price" value="<%=price%>" disabled>
+       <div class="clearfix"></div>
+
+			 <input type="hidden" name="category" value="<%=cat%>">
+			 <input class="form-control" name="cat" value="<%=cat%> Subscription" disabled>
+			 <div class="clearfix"></div>
+
+       <br>
+       <select class="" name="time">
+				 <option value="time">Select Time Slot</option>
+				 <option value="4-7">5:00-7:00 A.M. </option>
+				 <option value="7-9">7:00-9:00 A.M. </option>
+         <option value="9-11">9:00-11:00 A.M.</option>
+         <option value="11-13">11:00-1:00 P.M.</option>
+         <option value="13-15">1:00-3:00 P.M.</option>
+         <option value="15-17">3:00-5:00 P.M.</option>
+         <option value="17-19">5:00-7:00 P.M.</option>
+         <option value="19-21">7:00-9:00 P.M.</option>
+         <option value="21-22">9:00-10:00 P.M.</option>
+       </select>
+
+
+
+
+<br><br>
+
+       <input type="submit" value="Subscribe" />
+
+     </form>
+   </div>
+
+ </div>
+</div>
+<%
+%>
+<!--footer-->
+<%-include("footer")%>
