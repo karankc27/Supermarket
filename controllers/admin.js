@@ -44,3 +44,42 @@ exports.postAddProduct=(req,res,next)=>{
       console.log(err);
     });
 }
+
+exports.getUpdateProduct=(req,res,next)=>{
+  const user_name=req.session.user.name;
+  Product.find({merchant_name: user_name}).then(products=>{
+    res.render("update-products",{
+      title:"My Products",
+      products: products
+    })
+  });
+}
+exports.postUpdateProduct=(req,res,next)=>{
+  const id=req.body.id;
+  const img=req.body.image;
+  const quantity=req.body.quantity;
+  const pname=req.body.pname;
+  const price=req.body.price;
+  const category=req.body.category;
+  const pin=req.body.pin;
+  const subcat=req.body.subcat;
+  if(quantity==0){
+    Product.findOneAndDelete({_id:id}, function (err) {
+  if(err) console.log(err);
+  console.log("Successful deletion");
+});
+    res.redirect("/update-product");
+  }
+  Product.findById(id).then(product=>{
+    product.pname= pname;
+    product.price=price;
+    product.imageurl=img;
+    product.category=category;
+    product.quantity=quantity;
+    product.pin=pin;
+    product.subcat=subcat;
+    product.save();
+    res.redirect("/update-product");
+  })
+
+}

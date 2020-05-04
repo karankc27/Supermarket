@@ -197,8 +197,16 @@ exports.getSubscribe=(req,res)=>{
   if(cat=='milk'){
      img='https://www.sheknows.com/wp-content/uploads/2018/08/b76loahvqodmg0jsurpb.jpeg';
      price="Rs 1100/month";
-  }else {
+  }else if(cat=='vegetables') {
     img='https://healthyliving.natureloc.com/wp-content/uploads/2015/08/How-to-reduce-the-intake-of-pesticidal-residues-from-fruits-and-vegetables.jpg';
+    price="";
+  }
+  else if(cat=='fruits'){
+    img="https://www.pixelstalk.net/wp-content/uploads/2016/08/All-Fruit-Wallpaper-HD-Resolution.jpg";
+    price="";
+  }
+  else{
+    img="https://wallpapercave.com/wp/wp1903780.jpg";
     price="";
   }
   res.render('subscribe',{
