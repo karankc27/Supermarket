@@ -243,13 +243,13 @@ exports.postSubscribe=(req,res)=>{
      var transporter= nodemailer.createTransport({
        service: 'gmail',
        auth:{
-         user: 'sunorganicmart@gmail.com',
-         pass: 'Rebalstar@99'
+         user: '<gmail userid>',
+         pass: '<gmail password>'
        }
      });
-var maillist=[email,'sunorganicmart@gmail.com'];
+var maillist=[email,'<gmail id>'];
 var mailOptions={
-from: 'SunMart',
+from: '<Company Name>',
 to: maillist,
 subject: "Monthly Subscription",
 html:start
@@ -279,8 +279,8 @@ exports.getPayment=(req,res,next)=>{
       const Razorpay= require("razorpay");
 
       var instance = new Razorpay({
-      key_id: 'rzp_live_CryGYAtfe7k2C2',
-      key_secret: 'cBXlPX6V0elKdJJuRTl1QoTg'
+      key_id: '<razorpay key id>',
+      key_secret: '<razorpay secret>'
     })
     var options = {
       amount: total,  // amount in the smallest currency unit
@@ -412,13 +412,13 @@ let products;
                var transporter= nodemailer.createTransport({
                  service: 'gmail',
                  auth:{
-                   user: 'sunorganicmart@gmail.com',
-                   pass: 'Rebalstar@99'
+                   user: '<gmail id>',
+                   pass: '<gmail password>'
                  }
                });
-      var maillist=[user.email,'sunorganicmart@gmail.com'];
+      var maillist=[user.email,'<gmail id>'];
       var mailOptions={
-        from: 'SunMart',
+        from: '<Company Name>',
         to: maillist,
         subject: "New Order",
         html:y
@@ -470,13 +470,13 @@ var nodemailer=require('nodemailer');
 var transporter= nodemailer.createTransport({
      service: 'gmail',
      auth:{
-       user: 'sunorganicmart@gmail.com',
-       pass: 'Rebalstar@99'
+       user: '<gmail id>',
+       pass: '<gmail pwd>'
      }
    });
 var mailOptions={
 from: email,
-to: 'sunorganicmart@gmail.com',
+to: '<company mail id>',
 subject: "Customer Query",
 text: "From: "+name+" "+email+" \n"+message
 }

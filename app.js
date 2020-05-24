@@ -9,7 +9,7 @@ const User=require("./models/user");
 const MongoDBStore=require("connect-mongodb-session")(session);
 const csrf=require('csurf');
 
-const MONGODB_URI= "mongodb+srv://karthik:rebalstar@cluster0-pkbr5.gcp.mongodb.net/sunmart?retryWrites=true&w=majority";
+const MONGODB_URI= "<mongodb database url>";
 const store=new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions'

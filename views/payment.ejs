@@ -105,12 +105,12 @@
 <form action="/payment" method="POST">
 <script
   src="https://checkout.razorpay.com/v1/checkout.js"
-  data-key="rzp_live_CryGYAtfe7k2C2"
+  data-key="<razorpay data key>"
   data-amount= "<%= total*100 %>"
   data-currency="INR"
   data-order_id= "<%=orderid%>"
   data-buttontext="Pay Online"
-  data-name="Sun Mart"
+  data-name="<company name>"
   data-description="Test transaction"
   data-image="images/logo.png"
   data-prefill.name="<%= name%>"
