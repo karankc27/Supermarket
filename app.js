@@ -94,6 +94,7 @@ app.use(errorController.get404);
 
 
 mongoose.connect(MONGODB_URI).then(result=>{
+  // merchant: true in db
   app.listen(process.env.PORT||3000);
 
 }).catch(error=>{
